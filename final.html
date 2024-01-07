@@ -1,0 +1,116 @@
+<html>
+    <head><title>Temel JS</title></head>
+    <body>
+
+        <form>
+            <div>
+                <input 
+                name="kullaniciadi" 
+                id="username"
+                placeholder="Kullanıcı Adı"/>
+                <span id="userError"></span>
+            </div>
+            <div>
+                <input name="sifre"
+                id="password" type="password" 
+                placeholder="Şifre"/>
+                <span id="passError"></span>
+            </div>
+            <div>
+               <a onclick="dogrula()" >Giriş Yap</a>
+            </div>
+            
+        </form>
+
+        <div>
+            <form>
+            <input type="number" name="deger1" id="val1"/> 
+            <select id="islem">
+                <option value="1">Çarp</option>
+            </select>
+            <input type="number" name="deger2" id="val2" />
+            <a  onclick="hesapla()" />HESAPLA</a>
+            <div id="sonuc1"></div>
+        </form>
+        <table border="1" width="40%">
+
+            
+        </div>
+        <script>
+            function hesapla(){
+                // var val1 = Number(document.getElementById("val1").value)
+                // var val2 = Number(document.getElementById("val2").value)
+
+                var val1 = document.getElementById("val1").value
+                var val2 = document.getElementById("val2").value
+                var islem = document.getElementById("islem").value
+
+                    var sonuc =0;
+                    if(islem==1){//Çarpma
+                        sonuc = val1*val2;
+                    }
+                    sonuc = Number(val1)+Number(val2)
+                    }
+                  
+                      
+                    sonucYazdir(sonuc)
+            function sonucYazdir(deger){
+                var sonucYazdir = document.getElementById("sonuc1").innerHTML="<b>Sonuç: "+deger+"</b>"
+            }
+        </script>
+        <script>
+            function dogrula(){
+                var username = document.getElementById("username").value
+                var password = document.getElementById("password").value
+                
+                document.getElementById("userError").innerText=""
+                document.getElementById("passError").innerText=""
+                
+                if(!username && !password){
+                    document.getElementById("userError").innerText="Kullanıcı adı giriniz"
+                    // alert("Kullanıcı adı ve şifre giriniz")
+                }
+                else if(!username){
+                    document.getElementById("userError").innerText="Kullanıcı adı giriniz"
+
+                    // alert("Kullanıcı adı giriniz")
+                }
+                else if(!password){
+                    document.getElementById("passError").innerHTML="<b style='color:red'>Şifre giriniz</b>"
+
+                }
+                
+            }
+        </script>
+                            
+        <table border="1" width="40%">
+            <script>
+                for(i=0; i<11;i++){
+                    document.write("<tr>");
+                            if(i!=0){
+                                document.write('<td><b>'+i+'</b></td>')
+                            }
+                            else{
+                                document.write('<td></td>')
+                            }
+                        for(k=1;k<11;k++){
+                            document.write('<td>')
+                                if(i==0){
+                                    document.write('<b>'+k+'</b>')
+                                }
+                                else{
+                                   document.write(i*k)
+                                }
+                                document.write('</td>')
+                        }
+                    document.write("</tr>");
+                }
+            </script>
+        </table>
+
+
+    </body>
+</html>
+        </script>
+    </body>
+</html>
